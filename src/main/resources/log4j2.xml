@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN">
+    <Properties>
+        <Property name="pattern">%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</Property>
+        <!-- PATRON DEL LOG, NIVEL, TAG Y MENSAJE -->
+    </Properties>
+
+    <appenders>
+        <File name="logsInfo" fileName="src/main/resources/logs/informativeLogs.log" append="false">
+            <PatternLayout pattern="${pattern}"/>
+        </File>
+
+        <File name="logsDebug" fileName="src/main/resources/logs/debugLogs.log" append="false">
+            <PatternLayout pattern="${pattern}"/>
+        </File>
+        <!-- UBICACION Y NOMBRE DEL ARCHIVO -->
+        <File name="logsTrace" fileName="src/main/resources/logs/traceLogs.log"
+              append="false">   <!-- COMPORTAMIENTO, AL SER FALSO, SE BORRARA CADA VEZ QUE SE EJECUTA EL PROGRAMA, CREANDO UNO NUEVO -->
+            <PatternLayout pattern="${pattern}"/>    <!-- FORMATO DEL LOG -->
+        </File>
+    </appenders>
+
+    <loggers>
+        <root level="trace">
+            <appender-ref ref="logsInfo" level="info"/>
+            <appender-ref ref="logsDebug" level="debug"/>   <!-- NIVEL DE LOS LOGS -->
+            <appender-ref ref="logsTrace" level="trace"/>
+        </root>
+    </loggers>
+</configuration>
+
+        <!-- ARCHIVO DE CONFIGURACION DE LOS LOGS -->
+        <!-- SE AGREGA EN LA CARPETA RESOURCES -->
+        <!-- CREA APPENDERS PARA LUEGO INDICARLES NIVEL -->
+        <!-- Si no se pusiera este configurador, y se dejara tal cual las demas clases, el log seria como un sout o souf simple -->
+        <!-- este archivo es necesario si se quieren tratar los logs como tal, exportando un archivo de respaldo -->
