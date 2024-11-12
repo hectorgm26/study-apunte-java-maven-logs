@@ -19,6 +19,7 @@ Este repositorio es un apunte personal sobre el uso y configuración de logs en 
 
 Este proyecto utiliza las siguientes dependencias de Log4j, que se pueden agregar al archivo `pom.xml` de Maven:
 
+```xml
 <!-- Dependencia para el API de Log4j -->
 <dependency>
     <groupId>org.apache.logging.log4j</groupId>
@@ -32,6 +33,7 @@ Este proyecto utiliza las siguientes dependencias de Log4j, que se pueden agrega
     <artifactId>log4j-core</artifactId>
     <version>2.24.1</version>
 </dependency>
+```
 
 ### Uso
 
